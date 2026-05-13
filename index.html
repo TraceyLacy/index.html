@@ -2,274 +2,463 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WHY YOU SHOULD CONTINUE TO BE MY BOYFRIEND</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>JUSTIN & SALOME · reasons to stay in love 💌</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Google Fonts: playful and elegant mix -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none; /* just for a smooth romantic vibe, text still selectable */
     }
 
-    body{
-      font-family:'Poppins', sans-serif;
-      background: linear-gradient(135deg,#ffd6e8,#ffeef5,#fff5fa);
-      overflow-x:hidden;
-      color:#ff2e7a;
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #ffe0f0, #ffd9e8);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #b91d5e;
+      position: relative;
+      padding-bottom: 3rem;
     }
 
-    .hearts{
-      position:fixed;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
-      overflow:hidden;
-      z-index:-1;
+    /* FLOATING HEARTS (enhanced) */
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
     }
 
-    .heart{
-      position:absolute;
-      bottom:-100px;
-      color:rgba(255,255,255,0.7);
-      animation: float 10s linear infinite;
-      font-size:24px;
+    .float-heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 1.8rem;
+      animation: floatUp 9s linear infinite;
+      opacity: 0.5;
+      color: #ff90b5;
+      text-shadow: 0 0 6px #ffb7ce;
+      will-change: transform;
     }
 
-    @keyframes float{
-      0%{
-        transform:translateY(0) rotate(0deg);
-        opacity:0;
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
       }
-      20%{
-        opacity:1;
+      15% {
+        opacity: 0.8;
       }
-      100%{
-        transform:translateY(-120vh) rotate(360deg);
-        opacity:0;
+      85% {
+        opacity: 0.7;
       }
-    }
-
-    .container{
-      width:90%;
-      max-width:1000px;
-      margin:auto;
-      padding:40px 0;
-    }
-
-    .hero{
-      text-align:center;
-      padding:80px 20px;
-      background:rgba(255,255,255,0.35);
-      backdrop-filter:blur(10px);
-      border-radius:35px;
-      box-shadow:0 10px 40px rgba(255,105,180,0.2);
-      margin-bottom:40px;
-      animation: fadeIn 1.5s ease;
-    }
-
-    .hero h1{
-      font-size:4rem;
-      line-height:1.1;
-      font-family:'Pacifico', cursive;
-      color:#ff3f8e;
-      margin-bottom:20px;
-    }
-
-    .hero p{
-      font-size:1.2rem;
-      color:#ff5c9e;
-    }
-
-    .card{
-      background:rgba(255,255,255,0.45);
-      backdrop-filter:blur(8px);
-      border-radius:30px;
-      padding:45px;
-      margin:30px 0;
-      box-shadow:0 8px 30px rgba(255,105,180,0.15);
-      transition:0.4s ease;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .card:hover{
-      transform:translateY(-10px) scale(1.02);
-    }
-
-    .card::before{
-      content:"💖";
-      position:absolute;
-      font-size:120px;
-      opacity:0.07;
-      right:-10px;
-      top:-20px;
-    }
-
-    .card h2{
-      font-size:2rem;
-      margin-bottom:15px;
-      color:#ff2e7a;
-    }
-
-    .card p{
-      font-size:1.15rem;
-      line-height:1.8;
-      color:#ff5d98;
-      font-weight:500;
-    }
-
-    .big{
-      text-align:center;
-      font-size:2.7rem;
-      font-weight:700;
-      color:#ff2e7a;
-    }
-
-    .footer{
-      text-align:center;
-      padding:60px 20px;
-      font-size:1.3rem;
-      color:#ff4b94;
-    }
-
-    .sparkle{
-      animation:sparkle 2s infinite alternate;
-    }
-
-    @keyframes sparkle{
-      from{
-        transform:scale(1);
-      }
-      to{
-        transform:scale(1.08);
+      100% {
+        transform: translateY(-130vh) rotate(360deg);
+        opacity: 0;
       }
     }
 
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+    /* MAIN CONTAINER */
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      padding: 30px 0 40px;
     }
 
-    @media(max-width:700px){
-      .hero h1{
-        font-size:2.7rem;
-      }
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: rgba(255, 247, 250, 0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 70px 70px 70px 30px;
+      box-shadow: 0 25px 40px rgba(255, 80, 140, 0.2);
+      margin-bottom: 40px;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
 
-      .card{
-        padding:30px;
-      }
+    .hero h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: 3.8rem;
+      background: linear-gradient(135deg, #e63e6e, #ff87b3);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
 
-      .card h2{
-        font-size:1.5rem;
-      }
+    .hero p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #d43f74;
+      background: rgba(255, 232, 242, 0.6);
+      display: inline-block;
+      padding: 0.2rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+    }
 
-      .big{
-        font-size:2rem;
+    /* CARD STYLE - romantic glassmorphism */
+    .card {
+      background: rgba(255, 250, 252, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 48px;
+      padding: 2rem 2rem;
+      margin: 28px 0;
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(255, 220, 235, 0.8);
+      box-shadow: 0 12px 28px rgba(245, 100, 140, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.01);
+      background: rgba(255, 248, 250, 0.9);
+      box-shadow: 0 24px 40px rgba(255, 80, 130, 0.2);
+      border-color: #ffb7ce;
+    }
+
+    /* decorative heart emoji behind card */
+    .card::after {
+      content: "🌸";
+      font-size: 130px;
+      position: absolute;
+      bottom: -30px;
+      right: -20px;
+      opacity: 0.1;
+      pointer-events: none;
+      transform: rotate(-8deg);
+    }
+
+    .card h2 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #d42b6e;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .card h2 i {
+      font-size: 2rem;
+      color: #ff669d;
+    }
+
+    .card p {
+      font-size: 1.2rem;
+      line-height: 1.55;
+      font-weight: 500;
+      color: #a12653;
+      padding-left: 0.2rem;
+    }
+
+    .big-reason {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(125deg, #f43f7a, #ff8ab7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+    }
+
+    .footer-love {
+      text-align: center;
+      margin-top: 50px;
+      padding: 35px 20px;
+      background: rgba(255, 235, 245, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #c53a6c;
+    }
+
+    .footer-love i {
+      margin: 0 8px;
+      animation: pulseHeart 1.2s infinite;
+    }
+
+    @keyframes pulseHeart {
+      0% { transform: scale(1); opacity: 0.7;}
+      100% { transform: scale(1.2); opacity: 1;}
+    }
+
+    /* special sparkle animation for selected items */
+    .sparkle-text {
+      animation: gentleGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentleGlow {
+      0% { text-shadow: 0 0 1px #ffacc7; }
+      100% { text-shadow: 0 0 12px #ff7aa3, 0 0 4px #ffb7ce; }
+    }
+
+    /* responsive adjustments */
+    @media (max-width: 680px) {
+      .container {
+        width: 95%;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .card h2 {
+        font-size: 1.5rem;
+      }
+      .card p {
+        font-size: 1rem;
+      }
+      .big-reason {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="hearts">
-    <div class="heart" style="left:10%; animation-delay:0s;">❤</div>
-    <div class="heart" style="left:20%; animation-delay:2s;">💖</div>
-    <div class="heart" style="left:35%; animation-delay:4s;">❤</div>
-    <div class="heart" style="left:50%; animation-delay:1s;">💕</div>
-    <div class="heart" style="left:65%; animation-delay:5s;">💗</div>
-    <div class="heart" style="left:80%; animation-delay:3s;">❤</div>
-    <div class="heart" style="left:90%; animation-delay:6s;">💖</div>
+<!-- animated hearts background with multiple icons and delay variations -->
+<div class="floating-hearts" id="heartCanvas"></div>
+
+<div class="container">
+  
+  <!-- Hero with #JALOME vibes -->
+  <div class="hero">
+    <h1>JUSTIN 💞 SALOME</h1>
+    <p>WHY YOU SHOULD STAY MY BOYFRIEND FOREVER ✨</p>
   </div>
 
-  <div class="container">
-
-    <section class="hero sparkle">
-      <h1>WHY YOU SHOULD CONTINUE TO BE MY BOYFRIEND, JUSTIN 💌</h1>
-      <p>from Salome 💕</p>
-    </section>
-
-    <div class="card">
-      <h2>💖 I Always Take Care Of You</h2>
-      <p>
-        I ALWAYS TAKE CARE OF YOU WHEN YOU'RE NOT FEELING SICK
-        OR EVEN WHEN YOU’RE SICK JUSTIN 💗
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>🍓 My Favorite</h2>
-      <p>
-        I LIKE DOING YOU, BECAUSE YOU’RE MY FAVORITE FOOD
-        AND EVERYTHINGGG. MY FAVORITES 💞
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>🥞 Breakfasts</h2>
-      <p>
-        I'LL MAKE YOU DELICIOUS BREAKFASTS ✨
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>💌 Romantic Letters</h2>
-      <p>
-        I LIKE WRITING YOU ROMANTIC LETTERS 💕
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>💍 Ship Name</h2>
-      <p class="big">
-        #JALOMEEEE4EVER
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>💗 Perfect Together</h2>
-      <p>
-        IM THE BEST AND WE ARE SO GOOD TOGETHER!!!!! &lt;3
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>👶 Future Together</h2>
-      <p>
-        I WILL COUNCEL YOU AND OUR FUTURE 100000 KIDS 💖
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>🌷 Lucky You</h2>
-      <p class="big">
-        YOU'RE LUCKY TO HAVE ME!<br>
-        HAPPY VALENTINE'S DAY! 💘
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>💐 Mother In Law</h2>
-      <p>
-        I will be nice to your mother,
-        my mother in law 💞
-      </p>
-    </div>
-
-    <div class="footer sparkle">
-      made with love for Justin 💖
-    </div>
-
+  <!-- CARD 1: care + softness -->
+  <div class="card">
+    <h2><i class="fas fa-heartbeat"></i> 💖 I Always Take Care Of You</h2>
+    <p>Justin, when you're sick or just feeling low, I'll wrap you in blankets, make you soup, and kiss your forehead. I'm your personal nurse + cheerleader. I take care of your heart, your health, and your happiness. No matter what — even if you're grumpy — I’ll bring you strawberries and love. 💗</p>
   </div>
 
+  <!-- CARD 2: Favorite everything -->
+  <div class="card">
+    <h2><i class="fas fa-cookie-bite"></i> 🍓 My Favorite Everything</h2>
+    <p>"I like doing you" — wait, I mean I adore everything about YOU. You're my favorite meal, my favorite playlist, my favorite good morning text. You’re literally my favorite human being on planet Earth. No competition. 💞</p>
+  </div>
+
+  <!-- CARD 3: Breakfast magic -->
+  <div class="card">
+    <h2><i class="fas fa-egg"></i> 🥞 Breakfasts in Bed</h2>
+    <p>Pancakes with heart-shaped syrup? French toast with extra love? I'll wake up earlier just to surprise you with delicious breakfasts and warm coffee. And maybe I’ll burn the first pancake — but that’s the cute part. ✨</p>
+  </div>
+
+  <!-- CARD 4: Romantic letters / handwritten vibes -->
+  <div class="card">
+    <h2><i class="fas fa-envelope-open-heart"></i> 💌 Romantic Letters</h2>
+    <p>I love writing you handwritten letters with little doodles and lipstick kisses. I’ll hide them in your bag, under your pillow, or send them when you least expect. Words are my love language, and you’ll never run out of them. 💕</p>
+  </div>
+
+  <!-- CARD 5: SHIP NAME! big JALOMEEEE -->
+  <div class="card">
+    <h2><i class="fas fa-anchor"></i> 📛 Our Ship Name</h2>
+    <p class="big-reason" style="font-size: 2.2rem;">#JALOMEEEE4EVER</p>
+    <p style="text-align: center; margin-top: 10px;">We're a trending topic in my heart. Justin + Salome = unstoppable couple energy. 💍</p>
+  </div>
+
+  <!-- CARD 6: Perfect together dynamic -->
+  <div class="card">
+    <h2><i class="fas fa-star-of-life"></i> 💗 Perfect Together</h2>
+    <p>We are like strawberries and chocolate — sweet, iconic, and you can’t have one without the other. I’m the best girlfriend you'll ever have (I said it!), and we bring out the best in each other. People literally see us and say "goals." 🔥💖</p>
+  </div>
+
+  <!-- CARD 7: future and kids (counseling joke but cute) -->
+  <div class="card">
+    <h2><i class="fas fa-children"></i> 👶 Future Together</h2>
+    <p>I’ll counsel you through life, and we’ll build a home full of laughter, million kids (or maybe 3? we'll negotiate), and a garden full of roses. I'll be your partner-in-crime forever, holding your hand through every season. And our kids will have the best love story to look up to. 💖</p>
+  </div>
+
+  <!-- CARD 8: LUCKY YOU + Valentine's + original PNG text -->
+  <div class="card">
+    <h2><i class="fas fa-clover"></i> 🍀 Lucky You</h2>
+    <div class="big-reason" style="font-size: 1.9rem; margin-bottom: 0.5rem;">YOU'RE LUCKY TO HAVE ME!</div>
+    <p style="font-size: 1.3rem; font-weight: 600; text-align: center;">HAPPY VALENTINE'S DAY, JUSTIN! 💘<br> Every day with me is Valentine's magic.</p>
+    <div style="margin-top: 15px; font-size: 1rem; text-align: center;">✨ <i class="fas fa-smile-wink"></i> &nbsp; I glow because of you &nbsp; ✨</div>
+  </div>
+
+  <!-- CARD 9: Mother In Law promise -->
+  <div class="card">
+    <h2><i class="fas fa-hand-sparkles"></i> 💐 Mother In Law Energy</h2>
+    <p>I promise to be the sweetest daughter-in-law — I'll bring her flowers, compliment her cooking, and make her proud that her son chose me. You won’t have to worry about family drama; I’ll handle everything with kindness and charm. 😇💞</p>
+  </div>
+
+  <!-- bonus: secret extra reason -->
+  <div class="card">
+    <h2><i class="fas fa-crown"></i> 👑 Bonus Reason</h2>
+    <p>Because you wake up thinking about me, and I fall asleep smiling because of you. Every laugh, every hug, every silly argument — that’s real love. And we have the best kind. Also: I'll always steal your hoodies and give them back smelling like vanilla. It's a win-win, babe. 🧸💗</p>
+  </div>
+
+  <!-- footer with hearts -->
+  <div class="footer-love">
+    <i class="fas fa-heart"></i> made with infinite love for Justin by Salome <i class="fas fa-heart"></i><br>
+    <span style="font-size: 0.9rem;">💌 every reason is forever, just like us 💌</span>
+  </div>
+
+</div>
+
+<script>
+  // generate 45 floating hearts with different sizes, emojis and random speeds
+  const heartsArray = ['❤️', '💖', '💕', '💗', '🌸', '🌸', '💘', '💝', '✨', '💞', '💓', '💟', '🌹', '🍓', '💌'];
+  const heartsContainer = document.getElementById('heartCanvas');
+  const heartCount = 48;
+
+  for (let i = 0; i < heartCount; i++) {
+    const heartSpan = document.createElement('div');
+    heartSpan.classList.add('float-heart');
+    // random heart icon from array
+    const randomHeart = heartsArray[Math.floor(Math.random() * heartsArray.length)];
+    heartSpan.innerHTML = randomHeart;
+    // random left position (0% to 100%)
+    const leftPos = Math.random() * 100;
+    heartSpan.style.left = leftPos + '%';
+    // random duration between 6s and 15s
+    const duration = 7 + Math.random() * 10;
+    heartSpan.style.animationDuration = duration + 's';
+    // random delay between 0s and 12s
+    const delay = Math.random() * 12;
+    heartSpan.style.animationDelay = delay + 's';
+    // random font size
+    const size = 16 + Math.random() * 32;
+    heartSpan.style.fontSize = size + 'px';
+    // opacity variation
+    heartSpan.style.opacity = 0.4 + Math.random() * 0.5;
+    heartsContainer.appendChild(heartSpan);
+  }
+
+  // additional interactive sparkles on card hover: small fun effect (optional)
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => {
+    card.addEventListener('mouseenter', (e) => {
+      // create tiny sparkle for delight
+      const spark = document.createElement('span');
+      spark.innerHTML = '✨';
+      spark.style.position = 'absolute';
+      spark.style.left = e.clientX - card.getBoundingClientRect().left + 'px';
+      spark.style.top = e.clientY - card.getBoundingClientRect().top + 'px';
+      spark.style.fontSize = '20px';
+      spark.style.pointerEvents = 'none';
+      spark.style.opacity = '0.9';
+      spark.style.transition = 'transform 0.5s ease, opacity 0.6s';
+      spark.style.zIndex = '999';
+      card.style.position = 'relative';
+      card.appendChild(spark);
+      setTimeout(() => {
+        spark.style.transform = 'translateY(-25px) scale(0.8)';
+        spark.style.opacity = '0';
+        setTimeout(() => spark.remove(), 600);
+      }, 20);
+    });
+  });
+
+  // tiny dynamic year + personalized valentine footer animation
+  const footerText = document.querySelector('.footer-love');
+  if (footerText) {
+    const yearSpan = document.createElement('span');
+    yearSpan.style.display = 'block';
+    yearSpan.style.fontSize = '0.75rem';
+    yearSpan.style.marginTop = '12px';
+    yearSpan.style.opacity = '0.8';
+    yearSpan.innerHTML = `❤️ always & forever · ${new Date().getFullYear()} ❤️`;
+    footerText.appendChild(yearSpan);
+  }
+
+  // extra floating hearts that appear on click/tap (romantic easter egg)
+  function createClickHeart(event) {
+    const heartEmoji = ['💖', '💗', '❤️', '💕', '💞', '🌸', '🌟', '💘'];
+    const heartEl = document.createElement('div');
+    const randHeart = heartEmoji[Math.floor(Math.random() * heartEmoji.length)];
+    heartEl.innerHTML = randHeart;
+    heartEl.style.position = 'fixed';
+    heartEl.style.left = (event.clientX - 15) + 'px';
+    heartEl.style.top = (event.clientY - 15) + 'px';
+    heartEl.style.fontSize = '28px';
+    heartEl.style.pointerEvents = 'none';
+    heartEl.style.zIndex = '9999';
+    heartEl.style.transition = 'all 0.7s cubic-bezier(0.2, 0.9, 0.6, 1.1)';
+    heartEl.style.opacity = '1';
+    document.body.appendChild(heartEl);
+    // animate up and fade
+    let moveUp = 0;
+    const interval = setInterval(() => {
+      moveUp += 3;
+      heartEl.style.transform = `translateY(-${moveUp}px) scale(${1 - moveUp / 100})`;
+      heartEl.style.opacity = 1 - moveUp / 90;
+      if (moveUp >= 100) {
+        clearInterval(interval);
+        heartEl.remove();
+      }
+    }, 16);
+    setTimeout(() => {
+      clearInterval(interval);
+      heartEl.remove();
+    }, 900);
+  }
+
+  // add click anywhere romantic surprise 
+  document.body.addEventListener('click', (e) => {
+    // avoid too many if clicking buttons multiple times, but it's cute
+    if (e.target.closest('.card') || e.target.closest('.hero')) {
+      createClickHeart(e);
+    } else {
+      // moderate hearts on general bg click
+      if (Math.random() > 0.6) createClickHeart(e);
+    }
+  });
+
+  // dynamic year counter for relationship (just a fun mock)
+  const shipCounter = document.createElement('div');
+  shipCounter.style.position = 'fixed';
+  shipCounter.style.bottom = '15px';
+  shipCounter.style.right = '15px';
+  shipCounter.style.backgroundColor = 'rgba(255,220,235,0.7)';
+  shipCounter.style.backdropFilter = 'blur(8px)';
+  shipCounter.style.padding = '6px 14px';
+  shipCounter.style.borderRadius = '40px';
+  shipCounter.style.fontSize = '12px';
+  shipCounter.style.fontWeight = 'bold';
+  shipCounter.style.color = '#d43f74';
+  shipCounter.style.zIndex = '99';
+  shipCounter.style.fontFamily = 'monospace';
+  shipCounter.style.border = '1px solid #ffb0c3';
+  shipCounter.innerHTML = '💘 JALOME · infinite chapters 💘';
+  document.body.appendChild(shipCounter);
+
+  // tiny sparkles on hero title (improves cuteness)
+  const heroTitle = document.querySelector('.hero h1');
+  if (heroTitle) {
+    setInterval(() => {
+      heroTitle.classList.add('sparkle-text');
+      setTimeout(() => heroTitle.classList.remove('sparkle-text'), 800);
+    }, 2200);
+  }
+</script>
+
+<!-- additional background note: "YOU'RE LUCKY TO HAVE ME" from JALOME.png is fully integrated in card 8, plus all reasons are tailored -->
 </body>
 </html>
